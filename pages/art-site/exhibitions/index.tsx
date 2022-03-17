@@ -20,12 +20,12 @@ const layouts = { CardSection };
 const renderExhibitionCard = (data: Exhibition, index: number) => <ExhibitionCard key={index} dataExhibition={data} />;
 
 const renderWideExhibitionCard = (data: Exhibition, index: number) => (
-  <ExhibitionCard key={index} dataExhibition={data} variantWide />
+  <ExhibitionCard key={index} dataExhibition={data} wide />
 );
 
 const wideCardSectionProps = {
-  variantWide: true,
-  variantFullLoaded: true,
+  wide: true,
+  fullLoaded: true,
   renderCard: renderWideExhibitionCard,
 };
 
@@ -34,22 +34,22 @@ function ExhibitionsPage() {
     <React.Fragment>
       <CommonCardSection<Exhibition>
         dataServiceName="ArtFairsExhibitionData"
-        variantHeaderTitle="ART FAIRS"
+        headerTitle="ART FAIRS"
         {...wideCardSectionProps}
       />
       <CommonCardSection<Exhibition>
         dataServiceName="CurrentExhibitionData"
-        variantHeaderTitle="CURRENT"
+        headerTitle="CURRENT"
         {...wideCardSectionProps}
       />
       <CommonCardSection<Exhibition>
         dataServiceName="ForthComingExhibitionData"
-        variantHeaderTitle="FORTH COMING"
+        headerTitle="FORTH COMING"
         {...wideCardSectionProps}
       />
       <CommonCardSection<Exhibition>
         dataServiceName="PastExhibitionData"
-        variantHeaderTitle="PAST"
+        headerTitle="PAST"
         renderCard={renderExhibitionCard}
       />
     </React.Fragment>

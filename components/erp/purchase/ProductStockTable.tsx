@@ -1,7 +1,7 @@
 import { ProductStockOfPurchase } from '../../../core/erp/purchase';
 
 export interface ProductStockTableProps {
-  variantStockTypeDisabled?: boolean;
+  stockTypeDisabled?: boolean;
   dataStocks: ProductStockOfPurchase[];
   onDataStocks: (stocks: ProductStockOfPurchase[]) => void;
   onChangeStockType?: (stockType: 'M') => void;

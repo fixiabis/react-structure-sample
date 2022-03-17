@@ -1,3 +1,3 @@
 export interface CardLayoutProps {
-  variantWide?: boolean;
+  wide?: boolean;
 }

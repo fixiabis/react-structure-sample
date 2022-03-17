@@ -1,7 +1,7 @@
 export interface CardSectionLayoutProps {
-  variantHeaderTitle?: React.ReactNode;
-  variantFullLoaded?: boolean;
-  variantWide?: boolean;
+  headerTitle?: React.ReactNode;
+  fullLoaded?: boolean;
+  wide?: boolean;
 }
 
 export interface CardSectionProps extends CardSectionLayoutProps {
@@ -10,19 +10,12 @@ export interface CardSectionProps extends CardSectionLayoutProps {
 }
 
 function CardSection(props: CardSectionProps) {
-  const {
-    variantHeaderTitle,
-    variantFullLoaded,
-    variantWide,
-    renderCards,
-    onLoad: emitLoad,
-    ...layoutProps
-  } = props;
+  const { headerTitle, fullLoaded, wide, renderCards, onLoad: emitLoad, ...layoutProps } = props;
 
-  const header = variantHeaderTitle ? <div className="header">{variantHeaderTitle}</div> : null;
+  const header = headerTitle ? <div className="header">{headerTitle}</div> : null;
   const cards = renderCards({ className: 'card' });
 
-  const footer = variantFullLoaded ? null : (
+  const footer = fullLoaded ? null : (
     <div className="footer">
       <button className="load" onClick={emitLoad}>
         view more
