@@ -4,7 +4,7 @@ export type ServiceContextValue = Record<string, (...params: any[]) => any>;
 
 const ServiceContext = React.createContext<ServiceContextValue>({});
 
-export const useServiceContext = <T>(name: string, params: any[] = []): T => {
+export const useServiceContext = <T>(name: string, ...params: any[]): T => {
   const services = useContext(ServiceContext);
 
   if (!services.hasOwnProperty(name)) {

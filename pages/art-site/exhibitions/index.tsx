@@ -9,10 +9,10 @@ import { Exhibition } from '../../../core/art-site/exhibition';
 
 const services = {
   ExhibitionData: () => ({ data: [] }),
-  ArtFairsExhibitionData: () => useServiceContext('ExhibitionData', ['ArtFairs']),
-  CurrentExhibitionData: () => useServiceContext('ExhibitionData', ['Current']),
-  ForthComingExhibitionData: () => useServiceContext('ExhibitionData', ['ForthComing']),
-  PastExhibitionData: () => useServiceContext('ExhibitionData', ['Past']),
+  ArtFairsExhibitionData: () => useServiceContext('ExhibitionData', 'ArtFairs'),
+  CurrentExhibitionData: () => useServiceContext('ExhibitionData', 'Current'),
+  ForthComingExhibitionData: () => useServiceContext('ExhibitionData', 'ForthComing'),
+  PastExhibitionData: () => useServiceContext('ExhibitionData', 'Past'),
 };
 
 const layouts = { CardSection };
