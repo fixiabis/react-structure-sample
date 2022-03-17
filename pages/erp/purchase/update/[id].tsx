@@ -3,14 +3,14 @@ import LayoutContext from '../../../../components/common/LayoutContext';
 import ServiceContext from '../../../../components/common/ServiceContext';
 import DefaultTemplate from '../../../../components/erp/common/DefaultTemplate';
 import PurchaseInputSection from '../../../../components/erp/purchase/PurchaseInputSection/PurchaseInputSection';
-import UpdatePurchaseInputSection from '../../../../components/erp/purchase/PurchaseInputSection/UpdatePurchaseInputSection';
+import PurchaseUpdateSection from '../../../../components/erp/purchase/PurchaseInputSection/UpdatePurchaseInputSection';
 
 const services = { Purchase: () => ({}), Notification: () => ({}), Confirmation: () => ({}) };
 const layouts = { PurchaseInputSection };
 
 function PurchaseUpdatePage() {
   const router = useRouter();
-  const sections = <UpdatePurchaseInputSection dataPurchaseId={String(router.query.id)} />;
+  const sections = <PurchaseUpdateSection dataPurchaseId={String(router.query.id)} />;
 
   return (
     <ServiceContext.Provider value={services}>

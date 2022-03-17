@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import { NotificationService, ConfirmationService } from '../../../../core/erp/common';
 import { Purchase, PurchaseService } from '../../../../core/erp/purchase';
 import { useServiceContext } from '../../../common/ServiceContext';
-import BasePurchaseInputSection from './BasePurchaseInputSection';
+import PurchaseInputSectionBase from './PurchaseInputSectionBase';
 import { PurchaseInputSectionLayoutProps } from './PurchaseInputSection';
 
 export interface UpdatePurchaseInputSectionProps extends PurchaseInputSectionLayoutProps {
   dataPurchaseId: string;
 }
 
-function UpdatePurchaseInputSection(props: UpdatePurchaseInputSectionProps) {
+function PurchaseUpdateSection(props: UpdatePurchaseInputSectionProps) {
   const { dataPurchaseId, ...layoutProps } = props;
   const notificationService = useServiceContext<NotificationService>('Notification');
   const confirmationService = useServiceContext<ConfirmationService>('Confirmation');
@@ -41,7 +41,7 @@ function UpdatePurchaseInputSection(props: UpdatePurchaseInputSectionProps) {
   const resetPurchase = () => setPurchase(prevPurchase);
 
   return (
-    <BasePurchaseInputSection
+    <PurchaseInputSectionBase
       {...layoutProps}
       dataStockTypeDisabled
       dataStockType={stockType}
@@ -53,4 +53,4 @@ function UpdatePurchaseInputSection(props: UpdatePurchaseInputSectionProps) {
   );
 }
 
-export default UpdatePurchaseInputSection;
+export default PurchaseUpdateSection;

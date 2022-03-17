@@ -2,7 +2,7 @@ import { MaterialStockOfPurchase, ProductStockOfPurchase, Purchase } from '../..
 import { useLayoutContext } from '../../../common/LayoutContext';
 import { PurchaseInputSectionLayoutProps, PurchaseInputSectionProps } from './PurchaseInputSection';
 
-export interface BasePurchaseInputSectionProps extends PurchaseInputSectionLayoutProps {
+export interface PurchaseInputSectionBaseProps extends PurchaseInputSectionLayoutProps {
   dataStockTypeDisabled?: boolean;
 
   dataStockType: 'P' | 'M';
@@ -15,7 +15,7 @@ export interface BasePurchaseInputSectionProps extends PurchaseInputSectionLayou
   onActionStockTypeChange?: (stockType: 'P' | 'M') => void;
 }
 
-function BasePurchaseInputSection(props: BasePurchaseInputSectionProps) {
+function PurchaseInputSectionBase(props: PurchaseInputSectionBaseProps) {
   const {
     dataStockTypeDisabled,
     dataStockType,
@@ -62,4 +62,4 @@ function BasePurchaseInputSection(props: BasePurchaseInputSectionProps) {
   );
 }
 
-export default BasePurchaseInputSection;
+export default PurchaseInputSectionBase;

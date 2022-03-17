@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { ConfirmationService, NotificationService } from '../../../../core/erp/common';
 import { Purchase, PurchaseService } from '../../../../core/erp/purchase';
 import { useServiceContext } from '../../../common/ServiceContext';
-import BasePurchaseInputSection from './BasePurchaseInputSection';
+import PurchaseInputSectionBase from './PurchaseInputSectionBase';
 import { PurchaseInputSectionLayoutProps } from './PurchaseInputSection';
 
-export interface CreatePurchaseInputSectionProps extends PurchaseInputSectionLayoutProps {}
+export interface PurchaseCreateSectionProps extends PurchaseInputSectionLayoutProps {}
 
-function CreatePurchaseInputSection(props: CreatePurchaseInputSectionProps) {
+function PurchaseCreateSection(props: PurchaseCreateSectionProps) {
   const { ...layoutProps } = props;
   const notificationService = useServiceContext<NotificationService>('Notification');
   const confirmationService = useServiceContext<ConfirmationService>('Confirmation');
@@ -32,7 +32,7 @@ function CreatePurchaseInputSection(props: CreatePurchaseInputSectionProps) {
   const resetPurchase = () => {};
 
   return (
-    <BasePurchaseInputSection
+    <PurchaseInputSectionBase
       {...layoutProps}
       dataStockType={stockType}
       dataPurchase={purchase}
@@ -44,4 +44,4 @@ function CreatePurchaseInputSection(props: CreatePurchaseInputSectionProps) {
   );
 }
 
-export default CreatePurchaseInputSection;
+export default PurchaseCreateSection;
