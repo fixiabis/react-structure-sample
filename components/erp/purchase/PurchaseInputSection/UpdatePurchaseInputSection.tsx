@@ -47,8 +47,8 @@ function PurchaseUpdateSection(props: UpdatePurchaseInputSectionProps) {
       dataStockType={stockType}
       dataPurchase={purchase}
       onDataPurchase={setPurchase}
-      onActionSubmit={submitPurchaseUpdate}
-      onActionCancel={resetPurchase}
+      onSubmit={submitPurchaseUpdate}
+      onCancel={resetPurchase}
     />
   );
 }

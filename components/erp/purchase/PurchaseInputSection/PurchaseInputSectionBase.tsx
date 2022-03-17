@@ -10,9 +10,9 @@ export interface PurchaseInputSectionBaseProps extends PurchaseInputSectionLayou
   dataPurchase: Purchase;
   onDataPurchase: (purchase: React.SetStateAction<Purchase>) => void;
 
-  onActionSubmit: () => void;
-  onActionCancel: () => void;
-  onActionStockTypeChange?: (stockType: 'P' | 'M') => void;
+  onSubmit: () => void;
+  onCancel: () => void;
+  onStockTypeChange?: (stockType: 'P' | 'M') => void;
 }
 
 function PurchaseInputSectionBase(props: PurchaseInputSectionBaseProps) {
@@ -21,9 +21,9 @@ function PurchaseInputSectionBase(props: PurchaseInputSectionBaseProps) {
     dataStockType,
     dataPurchase,
     onDataPurchase: emitDataPurchase,
-    onActionSubmit: emitActionSubmit,
-    onActionCancel: emitActionCancel,
-    onActionStockTypeChange: emitActionStockTypeChange,
+    onSubmit: emitSubmit,
+    onCancel: emitCancel,
+    onStockTypeChange: emitStockTypeChange,
     ...layoutProps
   } = props;
 
@@ -53,11 +53,11 @@ function PurchaseInputSectionBase(props: PurchaseInputSectionBaseProps) {
       onDataPurchase={emitDataPurchase}
       dataStocks={stocks}
       onDataStocks={setStocks}
-      onActionSubmit={emitActionSubmit}
-      onActionCancel={emitActionCancel}
-      onActionStockTypeChange={emitActionStockTypeChange}
-      onActionAddStock={addStock}
-      onActionRemoveStock={removeStock}
+      onSubmit={emitSubmit}
+      onCancel={emitCancel}
+      onStockTypeChange={emitStockTypeChange}
+      onAddStock={addStock}
+      onRemoveStock={removeStock}
     />
   );
 }

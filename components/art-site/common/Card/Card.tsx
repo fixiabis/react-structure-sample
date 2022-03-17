@@ -1,3 +1,3 @@
-export interface CardLayoutProps extends IntrinsicElementProps<'div'> {
+export interface CardLayoutProps {
   variantWide?: boolean;
 }

@@ -1,10 +1,10 @@
 import { Purchase } from '../../../core/erp/purchase';
 
-export interface PurchaseFormProps extends IntrinsicElementProps<'form'> {
+export interface PurchaseFormProps {
   dataPurchase: Purchase;
   onDataPurchase: (purchase: Purchase) => void;
-  onActionSubmit: () => void;
-  onActionCancel: () => void;
+  onSubmit: () => void;
+  onCancel: () => void;
 }
 
 function PurchaseForm(props: PurchaseFormProps) {

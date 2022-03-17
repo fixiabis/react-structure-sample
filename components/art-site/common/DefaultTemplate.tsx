@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 
-export interface DefaultTemplateProps extends Omit<IntrinsicElementProps<'div'>, 'children'> {
+export interface DefaultTemplateProps {
   children: { sections: React.ReactNode; modals?: React.ReactNode };
 }
 

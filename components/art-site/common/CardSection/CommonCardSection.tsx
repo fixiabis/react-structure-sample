@@ -13,7 +13,7 @@ function CommonCardSection<T>(props: CommonCardSectionProps<T>) {
   const CardSection = useLayoutContext<CardSectionProps>('CardSection');
   const { data, loadMoreData } = useServiceContext<CommonDataService<T>>(dataServiceName);
   const renderCards = () => data.map(renderCard);
-  return <CardSection {...layoutProps} renderCards={renderCards} onActionLoad={loadMoreData} />;
+  return <CardSection {...layoutProps} renderCards={renderCards} onLoad={loadMoreData} />;
 }
 
 export default CommonCardSection;

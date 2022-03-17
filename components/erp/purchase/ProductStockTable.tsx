@@ -4,9 +4,9 @@ export interface ProductStockTableProps {
   variantStockTypeDisabled?: boolean;
   dataStocks: ProductStockOfPurchase[];
   onDataStocks: (stocks: ProductStockOfPurchase[]) => void;
-  onActionChangeStockType?: (stockType: 'M') => void;
-  onActionAddStock: () => void;
-  onActionRemoveStock: (index: number) => void;
+  onChangeStockType?: (stockType: 'M') => void;
+  onAddStock: () => void;
+  onRemoveStock: (index: number) => void;
 }
 
 function ProductStockTable(props: ProductStockTableProps) {

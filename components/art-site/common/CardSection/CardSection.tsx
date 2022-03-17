@@ -1,4 +1,4 @@
-export interface CardSectionLayoutProps extends IntrinsicElementProps<'section'> {
+export interface CardSectionLayoutProps {
   variantHeaderTitle?: React.ReactNode;
   variantFullLoaded?: boolean;
   variantWide?: boolean;
@@ -6,7 +6,7 @@ export interface CardSectionLayoutProps extends IntrinsicElementProps<'section'>
 
 export interface CardSectionProps extends CardSectionLayoutProps {
   renderCards: (layoutProps: any) => React.ReactNode;
-  onActionLoad: () => void;
+  onLoad: () => void;
 }
 
 function CardSection(props: CardSectionProps) {
@@ -15,7 +15,7 @@ function CardSection(props: CardSectionProps) {
     variantFullLoaded,
     variantWide,
     renderCards,
-    onActionLoad: emitActionLoad,
+    onLoad: emitLoad,
     ...layoutProps
   } = props;
 
@@ -24,7 +24,7 @@ function CardSection(props: CardSectionProps) {
 
   const footer = variantFullLoaded ? null : (
     <div className="footer">
-      <button className="load" onClick={emitActionLoad}>
+      <button className="load" onClick={emitLoad}>
         view more
       </button>
     </div>

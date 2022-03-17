@@ -37,9 +37,9 @@ function PurchaseCreateSection(props: PurchaseCreateSectionProps) {
       dataStockType={stockType}
       dataPurchase={purchase}
       onDataPurchase={setPurchase}
-      onActionSubmit={submitPurchaseCreate}
-      onActionCancel={resetPurchase}
-      onActionStockTypeChange={setStockType}
+      onSubmit={submitPurchaseCreate}
+      onCancel={resetPurchase}
+      onStockTypeChange={setStockType}
     />
   );
 }

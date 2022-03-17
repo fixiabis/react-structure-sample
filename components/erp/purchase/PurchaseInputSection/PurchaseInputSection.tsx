@@ -4,7 +4,7 @@ import ProductStockTable from '../ProductStockTable';
 import PurchaseForm from '../PurchaseForm';
 import StockDetailTable from '../StockDetailTable';
 
-export interface PurchaseInputSectionLayoutProps extends IntrinsicElementProps<'section'> {}
+export interface PurchaseInputSectionLayoutProps {}
 
 export interface PurchaseInputSectionProps extends PurchaseInputSectionLayoutProps {
   dataStockTypeDisabled?: boolean;
@@ -16,20 +16,20 @@ export interface PurchaseInputSectionProps extends PurchaseInputSectionLayoutPro
   dataStocks: StockOfPurchase[];
   onDataStocks: (stocks: StockOfPurchase[]) => void;
 
-  onActionSubmit: () => void;
-  onActionCancel: () => void;
-  onActionAddStock: () => void;
-  onActionRemoveStock: (index: number) => void;
-  onActionStockTypeChange?: (stockType: 'P' | 'M') => void;
+  onSubmit: () => void;
+  onCancel: () => void;
+  onAddStock: () => void;
+  onRemoveStock: (index: number) => void;
+  onStockTypeChange?: (stockType: 'P' | 'M') => void;
 }
 
 interface StockTableProps {
   dataStockTypeDisabled?: boolean;
   dataStocks: StockOfPurchase[];
   onDataStocks: (stocks: StockOfPurchase[]) => void;
-  onActionChangeStockType?: (stockType: 'P' | 'M') => void;
-  onActionAddStock: () => void;
-  onActionRemoveStock: (index: number) => void;
+  onChangeStockType?: (stockType: 'P' | 'M') => void;
+  onAddStock: () => void;
+  onRemoveStock: (index: number) => void;
 }
 
 function PurchaseInputSection(props: PurchaseInputSectionProps) {
@@ -39,11 +39,11 @@ function PurchaseInputSection(props: PurchaseInputSectionProps) {
     onDataPurchase: emitDataPurchase,
     dataStocks,
     onDataStocks: emitDataStocksOfPurchase,
-    onActionSubmit: emitActionSubmit,
-    onActionCancel: emitActionCancel,
-    onActionAddStock: emitActionAddStock,
-    onActionRemoveStock: emitActionRemoveStock,
-    onActionStockTypeChange: emitActionStockTypeChange,
+    onSubmit: emitSubmit,
+    onCancel: emitCancel,
+    onAddStock: emitAddStock,
+    onRemoveStock: emitRemoveStock,
+    onStockTypeChange: emitStockTypeChange,
     ...layoutProps
   } = props;
 
@@ -55,15 +55,15 @@ function PurchaseInputSection(props: PurchaseInputSectionProps) {
       <PurchaseForm
         dataPurchase={dataPurchase}
         onDataPurchase={emitDataPurchase}
-        onActionSubmit={emitActionSubmit}
-        onActionCancel={emitActionCancel}
+        onSubmit={emitSubmit}
+        onCancel={emitCancel}
       />
       <StockTable
         dataStocks={dataStocks}
         onDataStocks={emitDataStocksOfPurchase}
-        onActionAddStock={emitActionAddStock}
-        onActionRemoveStock={emitActionRemoveStock}
-        onActionChangeStockType={emitActionStockTypeChange}
+        onAddStock={emitAddStock}
+        onRemoveStock={emitRemoveStock}
+        onChangeStockType={emitStockTypeChange}
       />
       <StockDetailTable dataStocks={dataStocks} onDataStocks={emitDataStocksOfPurchase} />
     </section>
